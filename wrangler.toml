@@ -1,0 +1,19 @@
+name = "r2-webdav"
+main = "src/index.js"
+compatibility_date = "2025-05-01"
+compatibility_flags = ["nodejs_compat"]
+
+workers_dev = true
+
+# R2 存储桶绑定（必须与 Dashboard 中配置的 Binding 名称一致）
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "r2-webdav-bucket"
+preview_bucket_name = "r2-webdav-bucket"
+
+# 默认环境变量（通过 wrangler secret 或 Dashboard 覆盖更安全）
+[vars]
+R2_USER = ""
+R2_PASS = ""
+PUBLIC_READ = "false"
+READ_ONLY = "false"
